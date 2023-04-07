@@ -1,14 +1,14 @@
 {
-  "name": "ld48",
-  "version": "0.0.0",
+  "name": "sap",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
-    "typescript": "^4.8.4",
-    "vite": "^3.1.4"
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1"
   },
   "dependencies": {
     "phaser": "^3.55.2"
