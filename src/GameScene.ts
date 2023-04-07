@@ -1,3 +1,5 @@
+import { RedKettle } from './Pets/RedKettle'
+
 export class GameScene extends Phaser.Scene {
   constructor() {
     super('GameScene')
@@ -5,6 +7,7 @@ export class GameScene extends Phaser.Scene {
 
   preload() {
     this.load.image('background', 'assets/background.jpeg')
+    this.load.image('red-kettle', 'assets/red_kettle.png')
   }
 
   create() {
@@ -16,9 +19,9 @@ export class GameScene extends Phaser.Scene {
     this.add.text(20, 20, 'GameScene', { font: '25px Arial', color: 'yellow' })
 
     const slots = [
-      this.add.rectangle(200, 200, 100, 100, 0xff0000),
-      this.add.rectangle(500, 200, 100, 100, 0xff0000),
-      this.add.rectangle(800, 200, 100, 100, 0xff0000),
+      this.add.rectangle(200, 200, 150, 150, 0xdcc1fe),
+      this.add.rectangle(500, 200, 150, 150, 0xaf72fc),
+      this.add.rectangle(800, 200, 150, 150, 0x8223fa),
     ]
 
     // Create the target section
@@ -31,7 +34,17 @@ export class GameScene extends Phaser.Scene {
     // Make the target section interactive
     // targetSection.setInteractive()
 
-    let square = this.add.rectangle(100, 100, 50, 50, 0x00ff00)
+    const kettle = new RedKettle({
+      scene: this,
+      name: 'Red Kettle',
+      image: 'red-kettle',
+      cost: 100,
+      attack: 10,
+      defense: 10,
+    })
+    let square = kettle.render(500, 500)
+
+    // let square = this.add.rectangle(100, 100, 50, 50, 0x00ff00)
 
     // Make the square interactive and draggable
     square.setInteractive()
