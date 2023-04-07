@@ -62,7 +62,7 @@ export class GameScene extends Phaser.Scene {
     })
 
     // Add an event listener for when the drag ends
-    this.input.on('dragend', function (_: Phaser.Input.Pointer, gameObject: any, dragX: number, dragY: number) {
+    this.input.on('dragend', function (_: Phaser.Input.Pointer, gameObject: any) {
       console.log('Drag ended')
 
       let returnToOldPosition = true
