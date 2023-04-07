@@ -1,4 +1,6 @@
 import { RedKettle } from './Pets/RedKettle'
+import backgroundImage from '../assets/background.jpeg'
+import redKettleImage from '../assets/red_kettle.png'
 
 export class GameScene extends Phaser.Scene {
   constructor() {
@@ -6,8 +8,8 @@ export class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', 'assets/background.jpeg')
-    this.load.image('red-kettle', 'assets/red_kettle.png')
+    this.load.image('background', backgroundImage)
+    this.load.image('red-kettle', redKettleImage)
   }
 
   create() {
